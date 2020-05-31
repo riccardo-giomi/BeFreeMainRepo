@@ -1,0 +1,15 @@
+language: ruby
+git:
+  depth: 3
+  submodules_depth: 100
+rvm:
+  - 2.7.0
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rake ci:tests
+services:
+  - postgresql
+notifications:
+  email: false
