@@ -2,6 +2,8 @@ language: ruby
 git:
   depth: 3
   submodules_depth: 100
+before_install:
+   - git submodule update --init --remote --recursive
 rvm:
   - 2.7.0
 before_script:
